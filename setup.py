@@ -1,81 +1,40 @@
-"""
-Flask-JWT
-=========
+#!/usr/bin/env python3
 
-Flask-JWT is a Flask extension that adds basic Json Web Token features to any application.
+# Copyright 2014 Matthew Wright. All rights reserved.
+# Copyright 2019 Yannick Kirschen. All rights reserved.
+# Use of this source code is governed by the GNU-GPL
+# license that can be found in the LICENSE file.
 
-Resources
----------
+# Forked from https://github.com/mattupstate/flask-jwt
 
-* `Documentation <http://packages.python.org/Flask-JWT/>`_
-* `Issue Tracker <https://github.com/mattupstate/flask-jwt/issues>`_
-* `Source <https://github.com/mattupstate/flask-jwt>`_
-* `Development Version
-  <https://github.com/mattupstate/flask-jwt/raw/develop#egg=Flask-JWT-dev>`_
-
-"""
-
-import sys
 
 from setuptools import setup, find_packages
-from setuptools.command.test import test as TestCommand
+
+from flask_jwt_next import __version__
 
 
-def get_requirements(suffix=''):
-    with open('requirements%s.txt' % suffix) as f:
-        rv = f.read().splitlines()
-    return rv
+def long_description():
+    with open('README.md') as f:
+        return f.read()
 
-
-def get_long_description():
-    with open('README.rst') as f:
-        rv = f.read()
-    return rv
-
-
-class PyTest(TestCommand):
-    def finalize_options(self):
-        TestCommand.finalize_options(self)
-        self.test_args = [
-            '-xrs',
-            '--cov', 'flask_jwt',
-            '--cov-report', 'term-missing',
-            '--pep8',
-            '--flakes',
-            '--clearcache',
-            'tests'
-        ]
-        self.test_suite = True
-
-    def run_tests(self):
-        import pytest
-        errno = pytest.main(self.test_args)
-        sys.exit(errno)
 
 setup(
-    name='Flask-JWT',
-    version='0.3.2',
-    url='https://github.com/mattupstate/flask-jwt',
+    name='flask-jwt-next',
+    version=__version__.__version__,
     license='MIT',
-    author='Matt Wright',
-    author_email='matt@nobien.net',
-    description='JWT token authentication for Flask apps',
-    long_description=__doc__,
+    url='https://github.com/yannickkirschen/flask-jwt-next',
+    author='Yannick Kirschen',
+    author_email='github.yannickkirschen@protonmail.com',
+    description='JWT token authentication for Flask apps.',
+    long_description_content_type='text/markdown',
+    long_description=long_description(),
     packages=find_packages(),
-    zip_safe=False,
-    include_package_data=True,
-    platforms='any',
-    install_requires=get_requirements(),
-    tests_require=get_requirements('-dev'),
-    cmdclass={'test': PyTest},
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'Environment :: Web Environment',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Operating System :: OS Independent',
-        'Programming Language :: Python',
-        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
-        'Topic :: Software Development :: Libraries :: Python Modules'
+        'Operating System :: OS Independent',
+        'Intended Audience :: Developers',
+        'Natural Language :: English',
     ]
 )

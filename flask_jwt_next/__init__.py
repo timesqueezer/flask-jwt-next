@@ -1,10 +1,11 @@
-# -*- coding: utf-8 -*-
-"""
-    flask_jwt
-    ~~~~~~~~~
+#!/usr/bin/env python3
 
-    Flask-JWT module
-"""
+# Copyright 2014 Matthew Wright. All rights reserved.
+# Copyright 2019 Yannick Kirschen. All rights reserved.
+# Use of this source code is governed by the GNU-GPL
+# license that can be found in the LICENSE file.
+
+# Forked from https://github.com/mattupstate/flask-jwt
 
 import logging
 import warnings
@@ -17,8 +18,6 @@ import jwt
 
 from flask import current_app, request, jsonify, _request_ctx_stack
 from werkzeug.local import LocalProxy
-
-__version__ = '0.3.2'
 
 logger = logging.getLogger(__name__)
 
@@ -50,7 +49,12 @@ def _default_jwt_payload_handler(identity):
     iat = datetime.utcnow()
     exp = iat + current_app.config.get('JWT_EXPIRATION_DELTA')
     nbf = iat + current_app.config.get('JWT_NOT_BEFORE_DELTA')
-    identity = getattr(identity, 'id') or identity['id']
+
+    try:
+        identity = getattr(identity, 'id')
+    except AttributeError:
+        identity = identity['id']
+
     return {'exp': exp, 'iat': iat, 'nbf': nbf, 'identity': identity}
 
 
@@ -198,7 +202,6 @@ def encode_token():
 
 
 class JWT(object):
-
     def __init__(self, app=None, authentication_handler=None, identity_handler=None):
         self.authentication_callback = authentication_handler
         self.identity_callback = identity_handler

@@ -1,38 +1,28 @@
-Flask-JWT Changelog
-===================
+# Changelog
 
-Here you can see the full list of changes between each Flask-JWT release.
+## 1.0.0 (November 26, 2019)
 
-Version 0.3.2
--------------
+- Fixed a bug where the identity of a user caused an exception when the object is a dictionary.
+- Re-build the project for my personal needs
 
-Released November 3rd 2015
+## 0.3.2 (November 3, 2015)
 
 - Fixed an Authorization header conditional bug
 
-Version 0.3.1
--------------
-
-Released October 26th 2015
+## 0.3.1 (October 26, 2015)
 
 - Fix a bug with `auth_request_handler`
 - Deprecate `auth_request_handler`
 
-Version 0.3.0
--------------
+## 0.3.0 (October 15, 2015)
 
-Released October 15th 2015
-
-.. note:: This release includes many breaking changes
+*NOTE:* This release includes many breaking changes
 
 - Fix major implementation issue with encoding/decoding tokens
 - Changed new configuration options to align with PyJWT
 - Changed `current_user` to `current_identity`
 
-Version 0.2.0
--------------
-
-Released June 10th 2014
+## 0.2.0 (June 10, 2014)
 
 - Fixed an issue where `current_user` was not None
 - Added a response handler hook to be able to adjust auth response(s)
@@ -40,9 +30,6 @@ Released June 10th 2014
 - Removed pyjwt dependency
 
 
-Version 0.1.0
--------------
-
-Released March 5th 2014
+## 0.1.0 (March 5, 2014)
 
 - Initial release
