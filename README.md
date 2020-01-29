@@ -1,5 +1,7 @@
 # Flask-JWT NEXT
 
+[![PyPI version](https://badge.fury.io/py/flask-jwt-next.svg)](https://badge.fury.io/py/flask-jwt-next)
+
 *Flask-JWT NEXT* is a fork of [flask-jwt](https://github.com/mattupstate/flask-jwt).
 It contains some bugfixes and a structure that fits my needs.
 
