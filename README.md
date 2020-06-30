@@ -19,9 +19,5 @@ See [example](https://github.com/yannickkirschen/flask-jwt-next/blob/master/exam
 
 ## License
 
-Copyright 2014 Matthew Wright. All rights reserved.
-
-Copyright 2019 Yannick Kirschen. All rights reserved.
-
 Licensed under the [MIT License](https://github.com/yannickkirschen/task/blob/master/LICENSE).
 Happy forking :)
