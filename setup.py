@@ -10,7 +10,7 @@
 
 from setuptools import setup, find_packages
 
-from flask_jwt_next import __version__
+# from flask_jwt_next import __version__
 
 
 def long_description():
@@ -20,7 +20,7 @@ def long_description():
 
 setup(
     name='flask-jwt-next',
-    version=__version__.__version__,
+    version='1.0.0',
     license='MIT',
     url='https://github.com/yannickkirschen/flask-jwt-next',
     author='Yannick Kirschen',
