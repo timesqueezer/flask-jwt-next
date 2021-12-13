@@ -1,4 +1,4 @@
 pytest
 werkzeug
 Flask>=0.9
-PyJWT>=1.4.0,<2.4.0
+PyJWT>=2.3.0
