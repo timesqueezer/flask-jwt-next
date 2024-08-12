@@ -2,6 +2,7 @@
 
 # Copyright 2014 Matthew Wright. All rights reserved.
 # Copyright 2019 Yannick Kirschen. All rights reserved.
+# Copyright 2020 Matz Radloff
 # Use of this source code is governed by the GNU-GPL
 # license that can be found in the LICENSE file.
 
@@ -20,11 +21,11 @@ def long_description():
 
 setup(
     name='flask-jwt-next',
-    version='1.0.0',
+    version='1.0.1',
     license='MIT',
-    url='https://github.com/yannickkirschen/flask-jwt-next',
-    author='Yannick Kirschen',
-    author_email='github.yannickkirschen@protonmail.com',
+    url='https://github.com/timesqueezer/flask-jwt-next',
+    author='Matz Radloff',
+    author_email='matzradloff@gmail.com',
     description='JWT token authentication for Flask apps.',
     long_description_content_type='text/markdown',
     long_description=long_description(),
