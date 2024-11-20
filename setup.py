@@ -21,7 +21,7 @@ def long_description():
 
 setup(
     name='flask-jwt-next',
-    version='1.0.1',
+    version='1.0.2',
     license='MIT',
     url='https://github.com/timesqueezer/flask-jwt-next',
     author='Matz Radloff',

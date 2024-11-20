@@ -11,7 +11,7 @@ import logging
 import warnings
 
 from collections import OrderedDict
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from functools import wraps
 
 import jwt
@@ -46,7 +46,7 @@ def _default_jwt_headers_handler(identity):
 
 
 def _default_jwt_payload_handler(identity):
-    iat = datetime.utcnow()
+    iat = datetime.now(tz=timezone.utc)
     exp = iat + current_app.config.get('JWT_EXPIRATION_DELTA')
     nbf = iat + current_app.config.get('JWT_NOT_BEFORE_DELTA')
 
